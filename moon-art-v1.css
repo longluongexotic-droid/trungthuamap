@@ -1,0 +1,39 @@
+:root {
+  --moon-art-v1: url("./moon-v1.png");
+}
+
+/* Use the supplied moon artwork everywhere while preserving each component's
+   existing size, layout, text, and animation. */
+.thought-bubble,
+.thought-bubble.has-thought,
+.tiny-bubble,
+.loading-orb,
+.closed-orb,
+.moon-field .sky-bubble,
+.wall-count-orb {
+  background-color: transparent;
+  background-image: var(--moon-art-v1);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border-color: transparent;
+  box-shadow: none;
+  filter: none;
+}
+
+/* Remove the synthetic highlights and loading dot from the previous moons. */
+.bubble-glint,
+.sky-glint,
+.loading-orb > i,
+.closed-orb > i {
+  display: none;
+}
+
+/* Keep copy legible over the bright center of the supplied artwork. */
+.thought-bubble p,
+.sky-bubble p,
+.own-bubble small,
+.wall-count-orb span,
+.wall-count-orb small {
+  text-shadow: 0 1px 0 rgba(255, 248, 204, 0.58);
+}
